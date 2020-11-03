@@ -7,4 +7,5 @@ const add = (a, b) => {
 }
 
 //exports is used to share variables and functions
-module.exports = add
+//
+module.exports = add 
