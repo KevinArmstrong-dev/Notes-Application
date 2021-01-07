@@ -7,7 +7,7 @@ const notes = require('./notes.js');
 // const sum  = add(4,-2);
 // console.log(sum)
 
-console.log(chalk.blue.bgGreen('success'));
+console.log(chalk.blue('success'));
 console.log(chalk.red('Fail'));
 //console.log(chalk.purple('Warning'));
 console.log(notes());
