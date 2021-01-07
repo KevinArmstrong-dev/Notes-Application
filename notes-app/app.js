@@ -1,15 +1,11 @@
-//const validator = require('validator')
 const chalk = require('chalk')
 const notes = require('./notes.js');
 
-// const add = require('./utils.js')
+const command  = process.argv[2]
+if(command === 'add'){
 
-// const sum  = add(4,-2);
-// console.log(sum)
-
-console.log(chalk.blue('success'));
-console.log(chalk.red('Fail'));
-//console.log(chalk.purple('Warning'));
-console.log(notes());
-//console.log(validator.isEmail('bell@noreply.com'))
+    console.log('adding notes');
+}else if(command === 'remove'){
+    console.log('Remove note')
+}
 
