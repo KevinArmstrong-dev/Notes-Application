@@ -7,5 +7,7 @@ if(command === 'add'){
     console.log('adding notes');
 }else if(command === 'remove'){
     console.log('Remove note')
+}else{
+    console.log('Else note');
 }
 
