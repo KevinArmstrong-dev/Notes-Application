@@ -1,2 +1,2 @@
 # node-courses
-This is a project for learning purpose only.
+This is a project is for learning node.js and it is still in progress:)
