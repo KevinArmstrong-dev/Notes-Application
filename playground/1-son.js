@@ -11,3 +11,11 @@ const fs = require('fs');
 // const dataJSON = dataBuffer.toString();
 // const data = JSON.parse(dataJSON);
 // console.log(data.title);
+
+const dataBuffer= fs.readFileSync('1-json.json');
+const dataJSON = dataBuffer.toString();
+const data = JSON.parse(dataJSON);
+data.name = 'Kevin',
+data.age = 24
+const dataStr = JSON.stringify(data);
+fs.writeFileSync('1-json.json',dataStr);
