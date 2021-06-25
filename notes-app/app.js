@@ -43,7 +43,7 @@ yargs.command({
     },
     describe : 'Remove a note',
     handler: function(argv){
-        notes.removeNote('Note with Title: '+argv.title + ' removed!!');
+        notes.removeNote(argv.title);
     }
 })
 
