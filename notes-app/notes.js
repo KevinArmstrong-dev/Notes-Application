@@ -1,3 +1,4 @@
+const { Console } = require('console');
 const fs = require('fs');
 
 const getNotes = ()=> {
@@ -8,7 +9,7 @@ const addNote = function (title,body){
     const notes = loadNotes();
     const duplicateNotes = notes.filter(function(note){
         return note.title === title;
-    })
+    });
     if(duplicateNotes.length == 0){
         notes.push({
             title:title,
@@ -40,9 +41,17 @@ const loadNotes = ()=>{
 const removeNote=(title)=>{
     const notes =loadNotes();
     const filtered = notes.filter((note) =>{
-        return note.title === title;
+        return note.title !== title;
     })
-    console.log('Note With title '+title+ ' removed');
+    if(filtered.length != 0 ){
+        saveNotes(filtered);
+        console.log('Note Removed');
+    
+        console.log('Note With title '+title+ ' removed');
+    }else{
+        console.log('Note Not FOUND!');
+    }
+
 }
 module.exports = {
     getNotes: getNotes,
