@@ -38,6 +38,10 @@ const loadNotes = ()=>{
 }
 
 const removeNote=(title)=>{
+    const notes =loadNotes();
+    const filtered = notes.filter((note) =>{
+        return note.title === title;
+    })
     console.log('Note With title '+title+ ' removed');
 }
 module.exports = {
