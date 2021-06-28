@@ -1,5 +1,6 @@
 const { Console } = require('console');
 const fs = require('fs');
+const chalk = require('chalk')
 
 const getNotes = ()=> {
     return 'Your notes .... goes here'
@@ -16,7 +17,8 @@ const addNote = function (title,body){
             body: body
         });
         saveNotes(notes);
-        console.log('Note Added');
+        const msg = 'Note Added'
+        console.log(chalk.green(msg));
     }else{
         console.log('Note Title Taken');
     }
@@ -45,7 +47,7 @@ const removeNote=(title)=>{
     })
     if(filtered.length != 0 ){
         saveNotes(filtered);
-        console.log('Note Removed');
+        console.log(chalk.green('Note Removed'));
     
         console.log('Note With title '+title+ ' removed');
     }else{
