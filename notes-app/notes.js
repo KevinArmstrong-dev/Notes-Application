@@ -18,9 +18,9 @@ const addNote = function (title,body){
         });
         saveNotes(notes);
         const msg = 'Note Added'
-        console.log(chalk.green(msg));
+        console.log(chalk.green.inverse(msg));
     }else{
-        console.log('Note Title Taken');
+        console.log(chalk.orange.inverse('Note Title Taken'));
     }
 
 }
@@ -45,13 +45,13 @@ const removeNote=(title)=>{
     const filtered = notes.filter((note) =>{
         return note.title !== title;
     })
-    if(filtered.length != 0 ){
+    if(filtered.length  < notes.length ){
         saveNotes(filtered);
-        console.log(chalk.green('Note Removed'));
+        console.log(chalk.green.inverse('Note Removed'));
     
         console.log('Note With title '+title+ ' removed');
     }else{
-        console.log('Note Not FOUND!');
+        console.log(chalk.red.inverse('Note Not FOUND!'));
     }
 
 }
