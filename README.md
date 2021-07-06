@@ -12,9 +12,13 @@ Chalk : 4.1.1
 Yargs : 17.0.1
 
 ## Setup
-cd notes-app/
-npm install
-npm start
+To install it locally use npm
+
+'''
+
+$cd notes-app/
+$npm install
+$npm start
 
 
 ## commands
