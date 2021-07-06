@@ -14,11 +14,11 @@ Yargs : 17.0.1
 ## Setup
 To install it locally use npm
 
-'''
+```
 
-$cd notes-app/
-$npm install
-$npm start
+$ cd notes-app/
+$ npm install
+$ npm start
 
 
 ## commands
