@@ -1,9 +1,17 @@
-# node-courses
+## Notes Appllication
+
+##General Information
 This is a Note Taking application that uses Node.js.
 the application runs on the command line and you need to install node in order to run the application.
 the application stores all the notes in a JSON file on the file system.
 
-#commands
+##
+Projected is created with:
+Node : v12.19.0
+Chalk : 4.1.1
+Yargs : 17.0.1
+
+##commands
 the commands for the application are:
 
 read command: it needs the title parameter for the command to run.
