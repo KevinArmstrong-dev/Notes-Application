@@ -54,5 +54,6 @@ const removeNote=(title)=>{
 module.exports = {
     getNotes: getNotes,
     addNote: addNote,
-    removeNote:removeNote
+    removeNote:removeNote,
+    loadNotes:loadNotes
 }

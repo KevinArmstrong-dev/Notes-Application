@@ -62,7 +62,9 @@ yargs.command({
     command:'list',
     describe: 'Print the list of notes',
     handler(){
-        console.log('Printing list')
+        notes.loadNotes().forEach(element => {
+            console.log('title: '+element.title+ " body: "+element.body);
+        });;
     }
 })
 
