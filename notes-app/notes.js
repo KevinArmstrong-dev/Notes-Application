@@ -9,7 +9,11 @@ const getNotes = ()=> {
 const addNote = function (title,body){
     const notes = loadNotes();
     const duplicateNotes = notes.filter((note) => note.title === title);
-    if(duplicateNotes.length == 0){
+
+    // undefined will return undefined if no match is found
+    //find is more effecient than using filter since find sstops on the first occurence
+    const duplicateNote = notes.find((note) => note.title === note.title); 
+    if(!duplicateNote){
         notes.push({
             title:title,
             body: body
@@ -51,9 +55,31 @@ const removeNote=(title)=>{
     }
 
 }
+
+const listNotes = () =>{
+    loadNotes().forEach(element => {
+        console.log(chalk.green('title: ')+element.title+ " body: "+element.body);
+    });;
+}
+
+const readNote = (title) => {
+    const notes = loadNotes();
+    const Foundnote = notes.find((note)=> note.title === title);
+
+    if(Foundnote){
+        console.log(
+            chalk.green('Note Title') + ': '+Foundnote.title+ ' '+
+            chalk.green('Note Body')+ ': '+ Foundnote.body
+        );
+    }else{
+        console.log(chalk.red.inverse('Note Title Not Found!'));
+    }
+}
+
 module.exports = {
     getNotes: getNotes,
     addNote: addNote,
     removeNote:removeNote,
-    loadNotes:loadNotes
+    listNotes:listNotes,
+    readNote:readNote
 }

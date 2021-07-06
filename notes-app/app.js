@@ -25,8 +25,6 @@ yargs.command({
     },
     handler(argv){
         notes.addNote(argv.title,argv.body);
-        // console.log('Title: '+ argv.title);
-        // console.log('Body: '+argv.body);
     }
 })
 
@@ -51,8 +49,15 @@ yargs.command({
 yargs.command({
     command:'read',
     describe: 'Read a note',
-    handler(){
-        console.log("Reading a note !!");
+    builder : {
+        title: {
+            describe: 'Note title',
+            demandOption:true,
+            type:'string'
+        }
+    },
+    handler(argv){
+        notes.readNote(argv.title);
     }
 })
 
@@ -62,9 +67,7 @@ yargs.command({
     command:'list',
     describe: 'Print the list of notes',
     handler(){
-        notes.loadNotes().forEach(element => {
-            console.log('title: '+element.title+ " body: "+element.body);
-        });;
+       notes.listNotes();
     }
 })
 
